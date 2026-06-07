@@ -6,14 +6,14 @@ import { cn } from "@/lib/utils"
 import { Separator } from "@/components/ui/separator"
 
 const buttonGroupVariants = cva(
-  "flex w-fit items-stretch *:focus-visible:relative *:focus-visible:z-10 has-[>[data-slot=button-group]]:gap-2 has-[select[aria-hidden=true]:last-child]:[&>[data-slot=select-trigger]:last-of-type]:rounded-e-lg [&>[data-slot=select-trigger]:not([class*='w-'])]:w-fit [&>input]:flex-1",
+  "craft:flex craft:w-fit craft:items-stretch craft:*:focus-visible:relative craft:*:focus-visible:z-10 craft:has-[>[data-slot=button-group]]:gap-2 craft:has-[select[aria-hidden=true]:last-child]:[&>[data-slot=select-trigger]:last-of-type]:rounded-e-lg craft:[&>[data-slot=select-trigger]:not([class*=w-])]:w-fit craft:[&>input]:flex-1",
   {
     variants: {
       orientation: {
         horizontal:
-          "*:data-slot:rounded-e-none [&>[data-slot]:not(:has(~[data-slot]))]:rounded-e-lg! [&>[data-slot]~[data-slot]]:rounded-s-none [&>[data-slot]~[data-slot]]:border-s-0",
+          "craft:*:data-slot:rounded-e-none craft:[&>[data-slot]:not(:has(~[data-slot]))]:rounded-e-lg! craft:[&>[data-slot]~[data-slot]]:rounded-s-none craft:[&>[data-slot]~[data-slot]]:border-s-0",
         vertical:
-          "flex-col *:data-slot:rounded-b-none [&>[data-slot]:not(:has(~[data-slot]))]:rounded-b-lg! [&>[data-slot]~[data-slot]]:rounded-t-none [&>[data-slot]~[data-slot]]:border-t-0",
+          "craft:flex-col craft:*:data-slot:rounded-b-none craft:[&>[data-slot]:not(:has(~[data-slot]))]:rounded-b-lg! craft:[&>[data-slot]~[data-slot]]:rounded-t-none craft:[&>[data-slot]~[data-slot]]:border-t-0",
       },
     },
     defaultVariants: {
@@ -71,7 +71,7 @@ function ButtonGroupSeparator({
       data-slot="button-group-separator"
       orientation={orientation}
       className={cn(
-        "relative self-stretch bg-input data-horizontal:mx-px data-horizontal:w-auto data-vertical:my-px data-vertical:h-auto",
+        "craft:relative craft:self-stretch craft:bg-input craft:data-horizontal:mx-px craft:data-horizontal:w-auto craft:data-vertical:my-px craft:data-vertical:h-auto",
         className
       )}
       {...props}

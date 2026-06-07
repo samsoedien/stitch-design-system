@@ -4,13 +4,13 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const alertVariants = cva(
-  "group/alert relative grid w-full gap-0.5 rounded-lg border px-2.5 py-2 text-start text-sm has-data-[slot=alert-action]:relative has-data-[slot=alert-action]:pe-18 has-[>svg]:grid-cols-[auto_1fr] has-[>svg]:gap-x-2 *:[svg]:row-span-2 *:[svg]:translate-y-0.5 *:[svg]:text-current *:[svg:not([class*='size-'])]:size-4",
+  "craft:group/alert craft:relative craft:grid craft:w-full craft:gap-0.5 craft:rounded-lg craft:border craft:px-2.5 craft:py-2 craft:text-start craft:text-sm craft:has-data-[slot=alert-action]:relative craft:has-data-[slot=alert-action]:pe-18 craft:has-[>svg]:grid-cols-[auto_1fr] craft:has-[>svg]:gap-x-2 craft:*:[svg]:row-span-2 craft:*:[svg]:translate-y-0.5 craft:*:[svg]:text-current craft:*:[svg:not([class*=size-])]:size-4",
   {
     variants: {
       variant: {
-        default: "bg-card text-card-foreground",
+        default: "craft:bg-card craft:text-card-foreground",
         destructive:
-          "bg-card text-destructive *:data-[slot=alert-description]:text-destructive/90 *:[svg]:text-current",
+          "craft:bg-card craft:text-destructive craft:*:data-[slot=alert-description]:text-destructive/90 craft:*:[svg]:text-current",
       },
     },
     defaultVariants: {
@@ -39,7 +39,7 @@ function AlertTitle({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="alert-title"
       className={cn(
-        "font-medium group-has-[>svg]/alert:col-start-2 [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground",
+        "craft:font-medium craft:group-has-[>svg]/alert:col-start-2 craft:[&_a]:underline craft:[&_a]:underline-offset-3 craft:[&_a]:hover:text-foreground",
         className
       )}
       {...props}
@@ -55,7 +55,7 @@ function AlertDescription({
     <div
       data-slot="alert-description"
       className={cn(
-        "text-sm text-balance text-muted-foreground md:text-pretty [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground [&_p:not(:last-child)]:mb-4",
+        "craft:text-sm craft:text-balance craft:text-muted-foreground craft:md:text-pretty craft:[&_a]:underline craft:[&_a]:underline-offset-3 craft:[&_a]:hover:text-foreground craft:[&_p:not(:last-child)]:mb-4",
         className
       )}
       {...props}
@@ -67,7 +67,7 @@ function AlertAction({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="alert-action"
-      className={cn("absolute top-2 end-2", className)}
+      className={cn("craft:absolute craft:top-2 craft:end-2", className)}
       {...props}
     />
   )

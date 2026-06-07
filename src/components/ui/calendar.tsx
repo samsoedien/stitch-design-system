@@ -1,3 +1,5 @@
+"use client"
+
 import * as React from "react"
 import {
   DayPicker,
@@ -29,7 +31,7 @@ function Calendar({
     <DayPicker
       showOutsideDays={showOutsideDays}
       className={cn(
-        "group/calendar bg-background p-2 [--cell-radius:var(--radius-md)] [--cell-size:--spacing(7)] in-data-[slot=card-content]:bg-transparent in-data-[slot=popover-content]:bg-transparent",
+        "craft:group/calendar craft:bg-background craft:p-2 craft:[--cell-radius:var(--radius-md)] craft:[--cell-size:--spacing(7)] craft:in-data-[slot=card-content]:bg-transparent craft:in-data-[slot=popover-content]:bg-transparent",
         String.raw`rtl:**:[.rdp-button\_next>svg]:rotate-180`,
         String.raw`rtl:**:[.rdp-button\_previous>svg]:rotate-180`,
         className
@@ -42,93 +44,96 @@ function Calendar({
         ...formatters,
       }}
       classNames={{
-        root: cn("w-fit", defaultClassNames.root),
+        root: cn("craft:w-fit", defaultClassNames.root),
         months: cn(
-          "relative flex flex-col gap-4 md:flex-row",
+          "craft:relative craft:flex craft:flex-col craft:gap-4 craft:md:flex-row",
           defaultClassNames.months
         ),
-        month: cn("flex w-full flex-col gap-4", defaultClassNames.month),
+        month: cn("craft:flex craft:w-full craft:flex-col craft:gap-4", defaultClassNames.month),
         nav: cn(
-          "absolute inset-x-0 top-0 flex w-full items-center justify-between gap-1",
+          "craft:absolute craft:inset-x-0 craft:top-0 craft:flex craft:w-full craft:items-center craft:justify-between craft:gap-1",
           defaultClassNames.nav
         ),
         button_previous: cn(
           buttonVariants({ variant: buttonVariant }),
-          "size-(--cell-size) p-0 select-none aria-disabled:opacity-50",
+          "craft:size-(--cell-size) craft:p-0 craft:select-none craft:aria-disabled:opacity-50",
           defaultClassNames.button_previous
         ),
         button_next: cn(
           buttonVariants({ variant: buttonVariant }),
-          "size-(--cell-size) p-0 select-none aria-disabled:opacity-50",
+          "craft:size-(--cell-size) craft:p-0 craft:select-none craft:aria-disabled:opacity-50",
           defaultClassNames.button_next
         ),
         month_caption: cn(
-          "flex h-(--cell-size) w-full items-center justify-center px-(--cell-size)",
+          "craft:flex craft:h-(--cell-size) craft:w-full craft:items-center craft:justify-center craft:px-(--cell-size)",
           defaultClassNames.month_caption
         ),
         dropdowns: cn(
-          "flex h-(--cell-size) w-full items-center justify-center gap-1.5 text-sm font-medium",
+          "craft:flex craft:h-(--cell-size) craft:w-full craft:items-center craft:justify-center craft:gap-1.5 craft:text-sm craft:font-medium",
           defaultClassNames.dropdowns
         ),
         dropdown_root: cn(
-          "relative rounded-(--cell-radius)",
+          "craft:relative craft:rounded-(--cell-radius)",
           defaultClassNames.dropdown_root
         ),
         dropdown: cn(
-          "absolute inset-0 bg-popover opacity-0",
+          "craft:absolute craft:inset-0 craft:bg-popover craft:opacity-0",
           defaultClassNames.dropdown
         ),
         caption_label: cn(
-          "font-medium select-none",
+          "craft:font-medium craft:select-none",
           captionLayout === "label"
-            ? "text-sm"
-            : "flex items-center gap-1 rounded-(--cell-radius) text-sm [&>svg]:size-3.5 [&>svg]:text-muted-foreground",
+            ? "craft:text-sm"
+            : "craft:flex craft:items-center craft:gap-1 craft:rounded-(--cell-radius) craft:text-sm craft:[&>svg]:size-3.5 craft:[&>svg]:text-muted-foreground",
           defaultClassNames.caption_label
         ),
-        table: "w-full border-collapse",
-        weekdays: cn("flex", defaultClassNames.weekdays),
+        month_grid: cn(
+          "craft:w-full craft:border-collapse",
+          defaultClassNames.month_grid
+        ),
+        weekdays: cn("craft:flex", defaultClassNames.weekdays),
         weekday: cn(
-          "flex-1 rounded-(--cell-radius) text-[0.8rem] font-normal text-muted-foreground select-none",
+          "craft:flex-1 craft:rounded-(--cell-radius) craft:text-[0.8rem] craft:font-normal craft:text-muted-foreground craft:select-none",
           defaultClassNames.weekday
         ),
-        week: cn("mt-2 flex w-full", defaultClassNames.week),
+        week: cn("craft:mt-2 craft:flex craft:w-full", defaultClassNames.week),
         week_number_header: cn(
-          "w-(--cell-size) select-none",
+          "craft:w-(--cell-size) craft:select-none",
           defaultClassNames.week_number_header
         ),
         week_number: cn(
-          "text-[0.8rem] text-muted-foreground select-none",
+          "craft:text-[0.8rem] craft:text-muted-foreground craft:select-none",
           defaultClassNames.week_number
         ),
         day: cn(
-          "group/day relative aspect-square h-full w-full rounded-(--cell-radius) p-0 text-center select-none [&:last-child[data-selected=true]_button]:rounded-e-(--cell-radius)",
+          "craft:group/day craft:relative craft:aspect-square craft:h-full craft:w-full craft:rounded-(--cell-radius) craft:p-0 craft:text-center craft:select-none craft:[&:last-child[data-selected=true]_button]:rounded-e-(--cell-radius)",
           props.showWeekNumber
-            ? "[&:nth-child(2)[data-selected=true]_button]:rounded-s-(--cell-radius)"
-            : "[&:first-child[data-selected=true]_button]:rounded-s-(--cell-radius)",
+            ? "craft:[&:nth-child(2)[data-selected=true]_button]:rounded-s-(--cell-radius)"
+            : "craft:[&:first-child[data-selected=true]_button]:rounded-s-(--cell-radius)",
           defaultClassNames.day
         ),
         range_start: cn(
-          "relative isolate z-0 rounded-s-(--cell-radius) bg-muted after:absolute after:inset-y-0 after:end-0 after:w-4 after:bg-muted",
+          "craft:relative craft:isolate craft:z-0 craft:rounded-s-(--cell-radius) craft:bg-muted craft:after:absolute craft:after:inset-y-0 craft:after:end-0 craft:after:w-4 craft:after:bg-muted",
           defaultClassNames.range_start
         ),
-        range_middle: cn("rounded-none", defaultClassNames.range_middle),
+        range_middle: cn("craft:rounded-none", defaultClassNames.range_middle),
         range_end: cn(
-          "relative isolate z-0 rounded-e-(--cell-radius) bg-muted after:absolute after:inset-y-0 after:start-0 after:w-4 after:bg-muted",
+          "craft:relative craft:isolate craft:z-0 craft:rounded-e-(--cell-radius) craft:bg-muted craft:after:absolute craft:after:inset-y-0 craft:after:start-0 craft:after:w-4 craft:after:bg-muted",
           defaultClassNames.range_end
         ),
         today: cn(
-          "rounded-(--cell-radius) bg-muted text-foreground data-[selected=true]:rounded-none",
+          "craft:rounded-(--cell-radius) craft:bg-muted craft:text-foreground craft:data-[selected=true]:rounded-none",
           defaultClassNames.today
         ),
         outside: cn(
-          "text-muted-foreground aria-selected:text-muted-foreground",
+          "craft:text-muted-foreground craft:aria-selected:text-muted-foreground",
           defaultClassNames.outside
         ),
         disabled: cn(
-          "text-muted-foreground opacity-50",
+          "craft:text-muted-foreground craft:opacity-50",
           defaultClassNames.disabled
         ),
-        hidden: cn("invisible", defaultClassNames.hidden),
+        hidden: cn("craft:invisible", defaultClassNames.hidden),
         ...classNames,
       }}
       components={{
@@ -145,18 +150,18 @@ function Calendar({
         Chevron: ({ className, orientation, ...props }) => {
           if (orientation === "left") {
             return (
-              <ChevronLeftIcon className={cn("rtl:rotate-180 size-4", className)} {...props} />
+              <ChevronLeftIcon className={cn("craft:size-4", className)} {...props} />
             )
           }
 
           if (orientation === "right") {
             return (
-              <ChevronRightIcon className={cn("rtl:rotate-180 size-4", className)} {...props} />
+              <ChevronRightIcon className={cn("craft:size-4", className)} {...props} />
             )
           }
 
           return (
-            <ChevronDownIcon className={cn("size-4", className)} {...props} />
+            <ChevronDownIcon className={cn("craft:size-4", className)} {...props} />
           )
         },
         DayButton: ({ ...props }) => (
@@ -165,7 +170,7 @@ function Calendar({
         WeekNumber: ({ children, ...props }) => {
           return (
             <td {...props}>
-              <div className="flex size-(--cell-size) items-center justify-center text-center">
+              <div className="craft:flex craft:size-(--cell-size) craft:items-center craft:justify-center craft:text-center">
                 {children}
               </div>
             </td>
@@ -207,7 +212,7 @@ function CalendarDayButton({
       data-range-end={modifiers.range_end}
       data-range-middle={modifiers.range_middle}
       className={cn(
-        "relative isolate z-10 flex aspect-square size-auto w-full min-w-(--cell-size) flex-col gap-1 border-0 leading-none font-normal group-data-[focused=true]/day:relative group-data-[focused=true]/day:z-10 group-data-[focused=true]/day:border-ring group-data-[focused=true]/day:ring-[3px] group-data-[focused=true]/day:ring-ring/50 data-[range-end=true]:rounded-(--cell-radius) data-[range-end=true]:rounded-e-(--cell-radius) data-[range-end=true]:bg-primary data-[range-end=true]:text-primary-foreground data-[range-middle=true]:rounded-none data-[range-middle=true]:bg-muted data-[range-middle=true]:text-foreground data-[range-start=true]:rounded-(--cell-radius) data-[range-start=true]:rounded-s-(--cell-radius) data-[range-start=true]:bg-primary data-[range-start=true]:text-primary-foreground data-[selected-single=true]:bg-primary data-[selected-single=true]:text-primary-foreground dark:hover:text-foreground [&>span]:text-xs [&>span]:opacity-70",
+        "craft:relative craft:isolate craft:z-10 craft:flex craft:aspect-square craft:size-auto craft:w-full craft:min-w-(--cell-size) craft:flex-col craft:gap-1 craft:border-0 craft:leading-none craft:font-normal craft:group-data-[focused=true]/day:relative craft:group-data-[focused=true]/day:z-10 craft:group-data-[focused=true]/day:border-ring craft:group-data-[focused=true]/day:ring-[3px] craft:group-data-[focused=true]/day:ring-ring/50 craft:data-[range-end=true]:rounded-(--cell-radius) craft:data-[range-end=true]:rounded-e-(--cell-radius) craft:data-[range-end=true]:bg-primary craft:data-[range-end=true]:text-primary-foreground craft:data-[range-middle=true]:rounded-none craft:data-[range-middle=true]:bg-muted craft:data-[range-middle=true]:text-foreground craft:data-[range-start=true]:rounded-(--cell-radius) craft:data-[range-start=true]:rounded-s-(--cell-radius) craft:data-[range-start=true]:bg-primary craft:data-[range-start=true]:text-primary-foreground craft:data-[selected-single=true]:bg-primary craft:data-[selected-single=true]:text-primary-foreground craft:dark:hover:text-foreground craft:[&>span]:text-xs craft:[&>span]:opacity-70",
         defaultClassNames.day,
         className
       )}

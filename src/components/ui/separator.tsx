@@ -1,3 +1,5 @@
+"use client"
+
 import { Separator as SeparatorPrimitive } from "@base-ui/react/separator"
 
 import { cn } from "@/lib/utils"
@@ -12,7 +14,7 @@ function Separator({
       data-slot="separator"
       orientation={orientation}
       className={cn(
-        "shrink-0 bg-border data-horizontal:h-px data-horizontal:w-full data-vertical:w-px data-vertical:self-stretch",
+        "craft:shrink-0 craft:bg-border craft:data-horizontal:h-px craft:data-horizontal:w-full craft:data-vertical:w-px craft:data-vertical:self-stretch",
         className
       )}
       {...props}

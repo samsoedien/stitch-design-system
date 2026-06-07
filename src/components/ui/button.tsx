@@ -4,33 +4,33 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "craft:group/button craft:inline-flex craft:shrink-0 craft:items-center craft:justify-center craft:rounded-lg craft:border craft:border-transparent craft:bg-clip-padding craft:text-sm craft:font-medium craft:whitespace-nowrap craft:transition-all craft:outline-none craft:select-none craft:focus-visible:border-ring craft:focus-visible:ring-3 craft:focus-visible:ring-ring/50 craft:active:not-aria-[haspopup]:translate-y-px craft:disabled:pointer-events-none craft:disabled:opacity-50 craft:aria-invalid:border-destructive craft:aria-invalid:ring-3 craft:aria-invalid:ring-destructive/20 craft:dark:aria-invalid:border-destructive/50 craft:dark:aria-invalid:ring-destructive/40 craft:[&_svg]:pointer-events-none craft:[&_svg]:shrink-0 craft:[&_svg:not([class*=size-])]:size-4",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/80",
+        default: "craft:bg-primary craft:text-primary-foreground craft:hover:bg-primary/80",
         outline:
-          "border-border bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
+          "craft:border-border craft:bg-background craft:hover:bg-muted craft:hover:text-foreground craft:aria-expanded:bg-muted craft:aria-expanded:text-foreground craft:dark:border-input craft:dark:bg-input/30 craft:dark:hover:bg-input/50",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_5%)] aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
+          "craft:bg-secondary craft:text-secondary-foreground craft:hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_5%)] craft:aria-expanded:bg-secondary craft:aria-expanded:text-secondary-foreground",
         ghost:
-          "hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50",
+          "craft:hover:bg-muted craft:hover:text-foreground craft:aria-expanded:bg-muted craft:aria-expanded:text-foreground craft:dark:hover:bg-muted/50",
         destructive:
-          "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
-        link: "text-primary underline-offset-4 hover:underline",
+          "craft:bg-destructive/10 craft:text-destructive craft:hover:bg-destructive/20 craft:focus-visible:border-destructive/40 craft:focus-visible:ring-destructive/20 craft:dark:bg-destructive/20 craft:dark:hover:bg-destructive/30 craft:dark:focus-visible:ring-destructive/40",
+        link: "craft:text-primary craft:underline-offset-4 craft:hover:underline",
       },
       size: {
         default:
-          "h-8 gap-1.5 px-2.5 has-data-[icon=inline-end]:pe-2 has-data-[icon=inline-start]:ps-2",
-        xs: "h-6 gap-1 rounded-[min(var(--radius-md),10px)] px-2 text-xs in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pe-1.5 has-data-[icon=inline-start]:ps-1.5 [&_svg:not([class*='size-'])]:size-3",
-        sm: "h-7 gap-1 rounded-[min(var(--radius-md),12px)] px-2.5 text-[0.8rem] in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pe-1.5 has-data-[icon=inline-start]:ps-1.5 [&_svg:not([class*='size-'])]:size-3.5",
-        lg: "h-9 gap-1.5 px-2.5 has-data-[icon=inline-end]:pe-2 has-data-[icon=inline-start]:ps-2",
-        icon: "size-8",
+          "craft:h-8 craft:gap-1.5 craft:px-2.5 craft:has-data-[icon=inline-end]:pe-2 craft:has-data-[icon=inline-start]:ps-2",
+        xs: "craft:h-6 craft:gap-1 craft:rounded-[min(var(--radius-md),10px)] craft:px-2 craft:text-xs craft:in-data-[slot=button-group]:rounded-lg craft:has-data-[icon=inline-end]:pe-1.5 craft:has-data-[icon=inline-start]:ps-1.5 craft:[&_svg:not([class*=size-])]:size-3",
+        sm: "craft:h-7 craft:gap-1 craft:rounded-[min(var(--radius-md),12px)] craft:px-2.5 craft:text-[0.8rem] craft:in-data-[slot=button-group]:rounded-lg craft:has-data-[icon=inline-end]:pe-1.5 craft:has-data-[icon=inline-start]:ps-1.5 craft:[&_svg:not([class*=size-])]:size-3.5",
+        lg: "craft:h-9 craft:gap-1.5 craft:px-2.5 craft:has-data-[icon=inline-end]:pe-2 craft:has-data-[icon=inline-start]:ps-2",
+        icon: "craft:size-8",
         "icon-xs":
-          "size-6 rounded-[min(var(--radius-md),10px)] in-data-[slot=button-group]:rounded-lg [&_svg:not([class*='size-'])]:size-3",
+          "craft:size-6 craft:rounded-[min(var(--radius-md),10px)] craft:in-data-[slot=button-group]:rounded-lg craft:[&_svg:not([class*=size-])]:size-3",
         "icon-sm":
-          "size-7 rounded-[min(var(--radius-md),12px)] in-data-[slot=button-group]:rounded-lg",
-        "icon-lg": "size-9",
+          "craft:size-7 craft:rounded-[min(var(--radius-md),12px)] craft:in-data-[slot=button-group]:rounded-lg",
+        "icon-lg": "craft:size-9",
       },
     },
     defaultVariants: {

@@ -138,7 +138,7 @@ function SidebarProvider({
           } as React.CSSProperties
         }
         className={cn(
-          "group/sidebar-wrapper flex min-h-svh w-full has-data-[variant=inset]:bg-sidebar",
+          "craft:group/sidebar-wrapper craft:flex craft:min-h-svh craft:w-full craft:has-data-[variant=inset]:bg-sidebar",
           className
         )}
         {...props}
@@ -169,7 +169,7 @@ function Sidebar({
       <div
         data-slot="sidebar"
         className={cn(
-          "flex h-full w-(--sidebar-width) flex-col bg-sidebar text-sidebar-foreground",
+          "craft:flex craft:h-full craft:w-(--sidebar-width) craft:flex-col craft:bg-sidebar craft:text-sidebar-foreground",
           className
         )}
         {...props}
@@ -187,7 +187,7 @@ function Sidebar({
           data-sidebar="sidebar"
           data-slot="sidebar"
           data-mobile="true"
-          className="w-(--sidebar-width) bg-sidebar p-0 text-sidebar-foreground [&>button]:hidden"
+          className="craft:w-(--sidebar-width) craft:bg-sidebar craft:p-0 craft:text-sidebar-foreground craft:[&>button]:hidden"
           style={
             {
               "--sidebar-width": SIDEBAR_WIDTH_MOBILE,
@@ -195,11 +195,11 @@ function Sidebar({
           }
           side={side}
         >
-          <SheetHeader className="sr-only">
+          <SheetHeader className="craft:sr-only">
             <SheetTitle>Sidebar</SheetTitle>
             <SheetDescription>Displays the mobile sidebar.</SheetDescription>
           </SheetHeader>
-          <div className="flex h-full w-full flex-col">{children}</div>
+          <div className="craft:flex craft:h-full craft:w-full craft:flex-col">{children}</div>
         </SheetContent>
       </Sheet>
     )
@@ -207,7 +207,7 @@ function Sidebar({
 
   return (
     <div
-      className="group peer hidden text-sidebar-foreground md:block"
+      className="craft:group craft:peer craft:hidden craft:text-sidebar-foreground craft:md:block"
       data-state={state}
       data-collapsible={state === "collapsed" ? collapsible : ""}
       data-variant={variant}
@@ -218,23 +218,23 @@ function Sidebar({
       <div
         data-slot="sidebar-gap"
         className={cn(
-          "relative w-(--sidebar-width) bg-transparent transition-[width] duration-200 ease-linear",
-          "group-data-[collapsible=offcanvas]:w-0",
-          "group-data-[side=right]:rotate-180",
+          "craft:relative craft:w-(--sidebar-width) craft:bg-transparent craft:transition-[width] craft:duration-200 craft:ease-linear",
+          "craft:group-data-[collapsible=offcanvas]:w-0",
+          "craft:group-data-[side=right]:rotate-180",
           variant === "floating" || variant === "inset"
-            ? "group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4)))]"
-            : "group-data-[collapsible=icon]:w-(--sidebar-width-icon)"
+            ? "craft:group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4)))]"
+            : "craft:group-data-[collapsible=icon]:w-(--sidebar-width-icon)"
         )}
       />
       <div
         data-slot="sidebar-container"
         data-side={side}
         className={cn(
-          "fixed inset-y-0 z-10 hidden h-svh w-(--sidebar-width) transition-[left,right,width] duration-200 ease-linear data-[side=left]:left-0 data-[side=left]:group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)] data-[side=right]:right-0 data-[side=right]:group-data-[collapsible=offcanvas]:right-[calc(var(--sidebar-width)*-1)] md:flex",
+          "craft:fixed craft:inset-y-0 craft:z-10 craft:hidden craft:h-svh craft:w-(--sidebar-width) craft:transition-[left,right,width] craft:duration-200 craft:ease-linear craft:data-[side=left]:left-0 craft:data-[side=left]:group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)] craft:data-[side=right]:right-0 craft:data-[side=right]:group-data-[collapsible=offcanvas]:right-[calc(var(--sidebar-width)*-1)] craft:md:flex",
           // Adjust the padding for floating and inset variants.
           variant === "floating" || variant === "inset"
-            ? "p-2 group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4))+2px)]"
-            : "group-data-[collapsible=icon]:w-(--sidebar-width-icon) group-data-[side=left]:border-e group-data-[side=right]:border-s",
+            ? "craft:p-2 craft:group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4))+2px)]"
+            : "craft:group-data-[collapsible=icon]:w-(--sidebar-width-icon) craft:group-data-[side=left]:border-e craft:group-data-[side=right]:border-s",
           className
         )}
         {...props}
@@ -242,7 +242,7 @@ function Sidebar({
         <div
           data-sidebar="sidebar"
           data-slot="sidebar-inner"
-          className="flex size-full flex-col bg-sidebar group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:shadow-sm group-data-[variant=floating]:ring-1 group-data-[variant=floating]:ring-sidebar-border"
+          className="craft:flex craft:size-full craft:flex-col craft:bg-sidebar craft:group-data-[variant=floating]:rounded-lg craft:group-data-[variant=floating]:shadow-sm craft:group-data-[variant=floating]:ring-1 craft:group-data-[variant=floating]:ring-sidebar-border"
         >
           {children}
         </div>
@@ -271,8 +271,8 @@ function SidebarTrigger({
       }}
       {...props}
     >
-      <PanelLeftIcon className="rtl:rotate-180" />
-      <span className="sr-only">Toggle Sidebar</span>
+      <PanelLeftIcon />
+      <span className="craft:sr-only">Toggle Sidebar</span>
     </Button>
   )
 }
@@ -289,12 +289,12 @@ function SidebarRail({ className, ...props }: React.ComponentProps<"button">) {
       onClick={toggleSidebar}
       title="Toggle Sidebar"
       className={cn(
-        "absolute inset-y-0 z-20 hidden w-4 transition-all ease-linear group-data-[side=left]:-right-4 group-data-[side=right]:left-0 after:absolute after:inset-y-0 after:start-1/2 after:w-[2px] hover:after:bg-sidebar-border sm:flex ltr:-translate-x-1/2 rtl:-translate-x-1/2",
-        "in-data-[side=left]:cursor-w-resize rtl:in-data-[side=left]:cursor-e-resize in-data-[side=right]:cursor-e-resize rtl:in-data-[side=right]:cursor-w-resize",
-        "[[data-side=left][data-state=collapsed]_&]:cursor-e-resize rtl:[[data-side=left][data-state=collapsed]_&]:cursor-w-resize [[data-side=right][data-state=collapsed]_&]:cursor-w-resize rtl:[[data-side=right][data-state=collapsed]_&]:cursor-e-resize",
-        "group-data-[collapsible=offcanvas]:translate-x-0 rtl:group-data-[collapsible=offcanvas]:-translate-x-0 group-data-[collapsible=offcanvas]:after:start-full hover:group-data-[collapsible=offcanvas]:bg-sidebar",
-        "[[data-side=left][data-collapsible=offcanvas]_&]:-end-2",
-        "[[data-side=right][data-collapsible=offcanvas]_&]:-start-2",
+        "craft:absolute craft:inset-y-0 craft:z-20 craft:hidden craft:w-4 craft:transition-all craft:ease-linear craft:group-data-[side=left]:-right-4 craft:group-data-[side=right]:left-0 craft:after:absolute craft:after:inset-y-0 craft:after:start-1/2 craft:after:w-[2px] craft:hover:after:bg-sidebar-border craft:sm:flex craft:ltr:-translate-x-1/2 rtl:craft:ltr:translate-x-1/2 craft:rtl:-translate-x-1/2 rtl:craft:rtl:translate-x-1/2",
+        "craft:in-data-[side=left]:cursor-w-resize rtl:craft:in-data-[side=left]:cursor-e-resize craft:in-data-[side=right]:cursor-e-resize rtl:craft:in-data-[side=right]:cursor-w-resize",
+        "craft:[[data-side=left][data-state=collapsed]_&]:cursor-e-resize rtl:craft:[[data-side=left][data-state=collapsed]_&]:cursor-w-resize craft:[[data-side=right][data-state=collapsed]_&]:cursor-w-resize rtl:craft:[[data-side=right][data-state=collapsed]_&]:cursor-e-resize",
+        "craft:group-data-[collapsible=offcanvas]:translate-x-0 rtl:craft:group-data-[collapsible=offcanvas]:-translate-x-0 craft:group-data-[collapsible=offcanvas]:after:start-full craft:hover:group-data-[collapsible=offcanvas]:bg-sidebar",
+        "craft:[[data-side=left][data-collapsible=offcanvas]_&]:-end-2",
+        "craft:[[data-side=right][data-collapsible=offcanvas]_&]:-start-2",
         className
       )}
       {...props}
@@ -307,7 +307,7 @@ function SidebarInset({ className, ...props }: React.ComponentProps<"main">) {
     <main
       data-slot="sidebar-inset"
       className={cn(
-        "relative flex w-full flex-1 flex-col bg-background md:peer-data-[variant=inset]:m-2 md:peer-data-[variant=inset]:ms-0 md:peer-data-[variant=inset]:rounded-xl md:peer-data-[variant=inset]:shadow-sm md:peer-data-[variant=inset]:peer-data-[state=collapsed]:ms-2",
+        "craft:relative craft:flex craft:w-full craft:flex-1 craft:flex-col craft:bg-background craft:md:peer-data-[variant=inset]:m-2 craft:md:peer-data-[variant=inset]:ms-0 craft:md:peer-data-[variant=inset]:rounded-xl craft:md:peer-data-[variant=inset]:shadow-sm craft:md:peer-data-[variant=inset]:peer-data-[state=collapsed]:ms-2",
         className
       )}
       {...props}
@@ -323,7 +323,7 @@ function SidebarInput({
     <Input
       data-slot="sidebar-input"
       data-sidebar="input"
-      className={cn("h-8 w-full bg-background shadow-none", className)}
+      className={cn("craft:h-8 craft:w-full craft:bg-background craft:shadow-none", className)}
       {...props}
     />
   )
@@ -334,7 +334,7 @@ function SidebarHeader({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="sidebar-header"
       data-sidebar="header"
-      className={cn("flex flex-col gap-2 p-2", className)}
+      className={cn("craft:flex craft:flex-col craft:gap-2 craft:p-2", className)}
       {...props}
     />
   )
@@ -345,7 +345,7 @@ function SidebarFooter({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="sidebar-footer"
       data-sidebar="footer"
-      className={cn("flex flex-col gap-2 p-2", className)}
+      className={cn("craft:flex craft:flex-col craft:gap-2 craft:p-2", className)}
       {...props}
     />
   )
@@ -359,7 +359,7 @@ function SidebarSeparator({
     <Separator
       data-slot="sidebar-separator"
       data-sidebar="separator"
-      className={cn("mx-2 w-auto bg-sidebar-border", className)}
+      className={cn("craft:mx-2 craft:w-auto craft:bg-sidebar-border", className)}
       {...props}
     />
   )
@@ -371,7 +371,7 @@ function SidebarContent({ className, ...props }: React.ComponentProps<"div">) {
       data-slot="sidebar-content"
       data-sidebar="content"
       className={cn(
-        "no-scrollbar flex min-h-0 flex-1 flex-col gap-0 overflow-auto group-data-[collapsible=icon]:overflow-hidden",
+        "craft:no-scrollbar craft:flex craft:min-h-0 craft:flex-1 craft:flex-col craft:gap-0 craft:overflow-auto craft:group-data-[collapsible=icon]:overflow-hidden",
         className
       )}
       {...props}
@@ -384,7 +384,7 @@ function SidebarGroup({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="sidebar-group"
       data-sidebar="group"
-      className={cn("relative flex w-full min-w-0 flex-col p-2", className)}
+      className={cn("craft:relative craft:flex craft:w-full craft:min-w-0 craft:flex-col craft:p-2", className)}
       {...props}
     />
   )
@@ -446,7 +446,7 @@ function SidebarGroupContent({
     <div
       data-slot="sidebar-group-content"
       data-sidebar="group-content"
-      className={cn("w-full text-sm", className)}
+      className={cn("craft:w-full craft:text-sm", className)}
       {...props}
     />
   )
@@ -457,7 +457,7 @@ function SidebarMenu({ className, ...props }: React.ComponentProps<"ul">) {
     <ul
       data-slot="sidebar-menu"
       data-sidebar="menu"
-      className={cn("flex w-full min-w-0 flex-col gap-0", className)}
+      className={cn("craft:flex craft:w-full craft:min-w-0 craft:flex-col craft:gap-0", className)}
       {...props}
     />
   )
@@ -468,25 +468,25 @@ function SidebarMenuItem({ className, ...props }: React.ComponentProps<"li">) {
     <li
       data-slot="sidebar-menu-item"
       data-sidebar="menu-item"
-      className={cn("group/menu-item relative", className)}
+      className={cn("craft:group/menu-item craft:relative", className)}
       {...props}
     />
   )
 }
 
 const sidebarMenuButtonVariants = cva(
-  "peer/menu-button group/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-start text-sm ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pe-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-open:hover:bg-sidebar-accent data-open:hover:text-sidebar-accent-foreground data-active:bg-sidebar-accent data-active:font-medium data-active:text-sidebar-accent-foreground [&_svg]:size-4 [&_svg]:shrink-0 [&>span:last-child]:truncate",
+  "craft:peer/menu-button craft:group/menu-button craft:flex craft:w-full craft:items-center craft:gap-2 craft:overflow-hidden craft:rounded-md craft:p-2 craft:text-start craft:text-sm craft:ring-sidebar-ring craft:outline-hidden craft:transition-[width,height,padding] craft:group-has-data-[sidebar=menu-action]/menu-item:pe-8 craft:group-data-[collapsible=icon]:size-8! craft:group-data-[collapsible=icon]:p-2! craft:hover:bg-sidebar-accent craft:hover:text-sidebar-accent-foreground craft:focus-visible:ring-2 craft:active:bg-sidebar-accent craft:active:text-sidebar-accent-foreground craft:disabled:pointer-events-none craft:disabled:opacity-50 craft:aria-disabled:pointer-events-none craft:aria-disabled:opacity-50 craft:data-open:hover:bg-sidebar-accent craft:data-open:hover:text-sidebar-accent-foreground craft:data-active:bg-sidebar-accent craft:data-active:font-medium craft:data-active:text-sidebar-accent-foreground craft:[&_svg]:size-4 craft:[&_svg]:shrink-0 craft:[&>span:last-child]:truncate",
   {
     variants: {
       variant: {
-        default: "hover:bg-sidebar-accent hover:text-sidebar-accent-foreground",
+        default: "craft:hover:bg-sidebar-accent craft:hover:text-sidebar-accent-foreground",
         outline:
-          "bg-background shadow-[0_0_0_1px_var(--sidebar-border)] hover:bg-sidebar-accent hover:text-sidebar-accent-foreground hover:shadow-[0_0_0_1px_var(--sidebar-accent)]",
+          "craft:bg-background craft:shadow-[0_0_0_1px_var(--sidebar-border)] craft:hover:bg-sidebar-accent craft:hover:text-sidebar-accent-foreground craft:hover:shadow-[0_0_0_1px_var(--sidebar-accent)]",
       },
       size: {
-        default: "h-8 text-sm",
-        sm: "h-7 text-xs",
-        lg: "h-12 text-sm group-data-[collapsible=icon]:p-0!",
+        default: "craft:h-8 craft:text-sm",
+        sm: "craft:h-7 craft:text-xs",
+        lg: "craft:h-12 craft:text-sm craft:group-data-[collapsible=icon]:p-0!",
       },
     },
     defaultVariants: {
@@ -589,7 +589,7 @@ function SidebarMenuBadge({
       data-slot="sidebar-menu-badge"
       data-sidebar="menu-badge"
       className={cn(
-        "pointer-events-none absolute end-1 flex h-5 min-w-5 items-center justify-center rounded-md px-1 text-xs font-medium text-sidebar-foreground tabular-nums select-none group-data-[collapsible=icon]:hidden peer-hover/menu-button:text-sidebar-accent-foreground peer-data-[size=default]/menu-button:top-1.5 peer-data-[size=lg]/menu-button:top-2.5 peer-data-[size=sm]/menu-button:top-1 peer-data-active/menu-button:text-sidebar-accent-foreground",
+        "craft:pointer-events-none craft:absolute craft:end-1 craft:flex craft:h-5 craft:min-w-5 craft:items-center craft:justify-center craft:rounded-md craft:px-1 craft:text-xs craft:font-medium craft:text-sidebar-foreground craft:tabular-nums craft:select-none craft:group-data-[collapsible=icon]:hidden craft:peer-hover/menu-button:text-sidebar-accent-foreground craft:peer-data-[size=default]/menu-button:top-1.5 craft:peer-data-[size=lg]/menu-button:top-2.5 craft:peer-data-[size=sm]/menu-button:top-1 craft:peer-data-active/menu-button:text-sidebar-accent-foreground",
         className
       )}
       {...props}
@@ -613,17 +613,17 @@ function SidebarMenuSkeleton({
     <div
       data-slot="sidebar-menu-skeleton"
       data-sidebar="menu-skeleton"
-      className={cn("flex h-8 items-center gap-2 rounded-md px-2", className)}
+      className={cn("craft:flex craft:h-8 craft:items-center craft:gap-2 craft:rounded-md craft:px-2", className)}
       {...props}
     >
       {showIcon && (
         <Skeleton
-          className="size-4 rounded-md"
+          className="craft:size-4 craft:rounded-md"
           data-sidebar="menu-skeleton-icon"
         />
       )}
       <Skeleton
-        className="h-4 max-w-(--skeleton-width) flex-1"
+        className="craft:h-4 craft:max-w-(--skeleton-width) craft:flex-1"
         data-sidebar="menu-skeleton-text"
         style={
           {
@@ -641,7 +641,7 @@ function SidebarMenuSub({ className, ...props }: React.ComponentProps<"ul">) {
       data-slot="sidebar-menu-sub"
       data-sidebar="menu-sub"
       className={cn(
-        "mx-3.5 flex min-w-0 translate-x-px rtl:-translate-x-px flex-col gap-1 border-s border-sidebar-border px-2.5 py-0.5 group-data-[collapsible=icon]:hidden",
+        "craft:mx-3.5 craft:flex craft:min-w-0 craft:translate-x-px rtl:craft:-translate-x-px craft:flex-col craft:gap-1 craft:border-s craft:border-sidebar-border craft:px-2.5 craft:py-0.5 craft:group-data-[collapsible=icon]:hidden",
         className
       )}
       {...props}
@@ -657,7 +657,7 @@ function SidebarMenuSubItem({
     <li
       data-slot="sidebar-menu-sub-item"
       data-sidebar="menu-sub-item"
-      className={cn("group/menu-sub-item relative", className)}
+      className={cn("craft:group/menu-sub-item craft:relative", className)}
       {...props}
     />
   )

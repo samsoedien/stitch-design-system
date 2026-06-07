@@ -7,7 +7,7 @@ function Accordion({ className, ...props }: AccordionPrimitive.Root.Props) {
   return (
     <AccordionPrimitive.Root
       data-slot="accordion"
-      className={cn("flex w-full flex-col", className)}
+      className={cn("craft:flex craft:w-full craft:flex-col", className)}
       {...props}
     />
   )
@@ -17,7 +17,7 @@ function AccordionItem({ className, ...props }: AccordionPrimitive.Item.Props) {
   return (
     <AccordionPrimitive.Item
       data-slot="accordion-item"
-      className={cn("not-last:border-b", className)}
+      className={cn("craft:not-last:border-b", className)}
       {...props}
     />
   )
@@ -29,18 +29,18 @@ function AccordionTrigger({
   ...props
 }: AccordionPrimitive.Trigger.Props) {
   return (
-    <AccordionPrimitive.Header className="flex">
+    <AccordionPrimitive.Header className="craft:flex">
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
         className={cn(
-          "group/accordion-trigger relative flex flex-1 items-start justify-between rounded-lg border border-transparent py-2.5 text-start text-sm font-medium transition-all outline-none hover:underline focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:after:border-ring aria-disabled:pointer-events-none aria-disabled:opacity-50 **:data-[slot=accordion-trigger-icon]:ms-auto **:data-[slot=accordion-trigger-icon]:size-4 **:data-[slot=accordion-trigger-icon]:text-muted-foreground",
+          "craft:group/accordion-trigger craft:relative craft:flex craft:flex-1 craft:items-start craft:justify-between craft:rounded-lg craft:border craft:border-transparent craft:py-2.5 craft:text-start craft:text-sm craft:font-medium craft:transition-all craft:outline-none craft:hover:underline craft:focus-visible:border-ring craft:focus-visible:ring-3 craft:focus-visible:ring-ring/50 craft:focus-visible:after:border-ring craft:aria-disabled:pointer-events-none craft:aria-disabled:opacity-50 craft:**:data-[slot=accordion-trigger-icon]:ms-auto craft:**:data-[slot=accordion-trigger-icon]:size-4 craft:**:data-[slot=accordion-trigger-icon]:text-muted-foreground",
           className
         )}
         {...props}
       >
         {children}
-        <ChevronDownIcon data-slot="accordion-trigger-icon" className="pointer-events-none shrink-0 group-aria-expanded/accordion-trigger:hidden" />
-        <ChevronUpIcon data-slot="accordion-trigger-icon" className="pointer-events-none hidden shrink-0 group-aria-expanded/accordion-trigger:inline" />
+        <ChevronDownIcon data-slot="accordion-trigger-icon" className="craft:pointer-events-none craft:shrink-0 craft:group-aria-expanded/accordion-trigger:hidden" />
+        <ChevronUpIcon data-slot="accordion-trigger-icon" className="craft:pointer-events-none craft:hidden craft:shrink-0 craft:group-aria-expanded/accordion-trigger:inline" />
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
   )
@@ -54,12 +54,12 @@ function AccordionContent({
   return (
     <AccordionPrimitive.Panel
       data-slot="accordion-content"
-      className="overflow-hidden text-sm data-open:animate-accordion-down data-closed:animate-accordion-up"
+      className="craft:overflow-hidden craft:text-sm craft:data-open:animate-accordion-down craft:data-closed:animate-accordion-up"
       {...props}
     >
       <div
         className={cn(
-          "h-(--accordion-panel-height) pt-0 pb-2.5 data-ending-style:h-0 data-starting-style:h-0 [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground [&_p:not(:last-child)]:mb-4",
+          "craft:h-(--accordion-panel-height) craft:pt-0 craft:pb-2.5 craft:data-ending-style:h-0 craft:data-starting-style:h-0 craft:[&_a]:underline craft:[&_a]:underline-offset-3 craft:[&_a]:hover:text-foreground craft:[&_p:not(:last-child)]:mb-4",
           className
         )}
       >

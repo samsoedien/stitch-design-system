@@ -15,7 +15,7 @@ function NativeSelect({
   return (
     <div
       className={cn(
-        "group/native-select relative w-fit has-[select:disabled]:opacity-50",
+        "craft:group/native-select craft:relative craft:w-fit craft:has-[select:disabled]:opacity-50",
         className
       )}
       data-slot="native-select-wrapper"
@@ -24,10 +24,10 @@ function NativeSelect({
       <select
         data-slot="native-select"
         data-size={size}
-        className="h-8 w-full min-w-0 appearance-none rounded-lg border border-input bg-transparent py-1 pe-8 ps-2.5 text-sm transition-colors outline-none select-none selection:bg-primary selection:text-primary-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 data-[size=sm]:h-7 data-[size=sm]:rounded-[min(var(--radius-md),10px)] data-[size=sm]:py-0.5 dark:bg-input/30 dark:hover:bg-input/50 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40"
+        className="craft:h-8 craft:w-full craft:min-w-0 craft:appearance-none craft:rounded-lg craft:border craft:border-input craft:bg-transparent craft:py-1 craft:pe-8 craft:ps-2.5 craft:text-sm craft:transition-colors craft:outline-none craft:select-none craft:selection:bg-primary craft:selection:text-primary-foreground craft:placeholder:text-muted-foreground craft:focus-visible:border-ring craft:focus-visible:ring-3 craft:focus-visible:ring-ring/50 craft:disabled:pointer-events-none craft:disabled:cursor-not-allowed craft:aria-invalid:border-destructive craft:aria-invalid:ring-3 craft:aria-invalid:ring-destructive/20 craft:data-[size=sm]:h-7 craft:data-[size=sm]:rounded-[min(var(--radius-md),10px)] craft:data-[size=sm]:py-0.5 craft:dark:bg-input/30 craft:dark:hover:bg-input/50 craft:dark:aria-invalid:border-destructive/50 craft:dark:aria-invalid:ring-destructive/40"
         {...props}
       />
-      <ChevronDownIcon className="pointer-events-none absolute top-1/2 end-2.5 size-4 -translate-y-1/2 text-muted-foreground select-none" aria-hidden="true" data-slot="native-select-icon" />
+      <ChevronDownIcon className="craft:pointer-events-none craft:absolute craft:top-1/2 craft:end-2.5 craft:size-4 craft:-translate-y-1/2 craft:text-muted-foreground craft:select-none" aria-hidden="true" data-slot="native-select-icon" />
     </div>
   )
 }
@@ -39,7 +39,7 @@ function NativeSelectOption({
   return (
     <option
       data-slot="native-select-option"
-      className={cn("bg-[Canvas] text-[CanvasText]", className)}
+      className={cn("craft:bg-[Canvas] craft:text-[CanvasText]", className)}
       {...props}
     />
   )
@@ -52,7 +52,7 @@ function NativeSelectOptGroup({
   return (
     <optgroup
       data-slot="native-select-optgroup"
-      className={cn("bg-[Canvas] text-[CanvasText]", className)}
+      className={cn("craft:bg-[Canvas] craft:text-[CanvasText]", className)}
       {...props}
     />
   )

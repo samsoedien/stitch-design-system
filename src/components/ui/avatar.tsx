@@ -1,3 +1,5 @@
+"use client"
+
 import * as React from "react"
 import { Avatar as AvatarPrimitive } from "@base-ui/react/avatar"
 
@@ -15,7 +17,7 @@ function Avatar({
       data-slot="avatar"
       data-size={size}
       className={cn(
-        "group/avatar relative flex size-8 shrink-0 rounded-full select-none after:absolute after:inset-0 after:rounded-full after:border after:border-border after:mix-blend-darken data-[size=lg]:size-10 data-[size=sm]:size-6 dark:after:mix-blend-lighten",
+        "craft:group/avatar craft:relative craft:flex craft:size-8 craft:shrink-0 craft:rounded-full craft:select-none craft:after:absolute craft:after:inset-0 craft:after:rounded-full craft:after:border craft:after:border-border craft:after:mix-blend-darken craft:data-[size=lg]:size-10 craft:data-[size=sm]:size-6 craft:dark:after:mix-blend-lighten",
         className
       )}
       {...props}
@@ -28,7 +30,7 @@ function AvatarImage({ className, ...props }: AvatarPrimitive.Image.Props) {
     <AvatarPrimitive.Image
       data-slot="avatar-image"
       className={cn(
-        "aspect-square size-full rounded-full object-cover",
+        "craft:aspect-square craft:size-full craft:rounded-full craft:object-cover",
         className
       )}
       {...props}
@@ -44,7 +46,7 @@ function AvatarFallback({
     <AvatarPrimitive.Fallback
       data-slot="avatar-fallback"
       className={cn(
-        "flex size-full items-center justify-center rounded-full bg-muted text-sm text-muted-foreground group-data-[size=sm]/avatar:text-xs",
+        "craft:flex craft:size-full craft:items-center craft:justify-center craft:rounded-full craft:bg-muted craft:text-sm craft:text-muted-foreground craft:group-data-[size=sm]/avatar:text-xs",
         className
       )}
       {...props}
@@ -57,10 +59,10 @@ function AvatarBadge({ className, ...props }: React.ComponentProps<"span">) {
     <span
       data-slot="avatar-badge"
       className={cn(
-        "absolute end-0 bottom-0 z-10 inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground bg-blend-color ring-2 ring-background select-none",
-        "group-data-[size=sm]/avatar:size-2 group-data-[size=sm]/avatar:[&>svg]:hidden",
-        "group-data-[size=default]/avatar:size-2.5 group-data-[size=default]/avatar:[&>svg]:size-2",
-        "group-data-[size=lg]/avatar:size-3 group-data-[size=lg]/avatar:[&>svg]:size-2",
+        "craft:absolute craft:end-0 craft:bottom-0 craft:z-10 craft:inline-flex craft:items-center craft:justify-center craft:rounded-full craft:bg-primary craft:text-primary-foreground craft:bg-blend-color craft:ring-2 craft:ring-background craft:select-none",
+        "craft:group-data-[size=sm]/avatar:size-2 craft:group-data-[size=sm]/avatar:[&>svg]:hidden",
+        "craft:group-data-[size=default]/avatar:size-2.5 craft:group-data-[size=default]/avatar:[&>svg]:size-2",
+        "craft:group-data-[size=lg]/avatar:size-3 craft:group-data-[size=lg]/avatar:[&>svg]:size-2",
         className
       )}
       {...props}
@@ -73,7 +75,7 @@ function AvatarGroup({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="avatar-group"
       className={cn(
-        "group/avatar-group flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:ring-background",
+        "craft:group/avatar-group craft:flex craft:-space-x-2 craft:*:data-[slot=avatar]:ring-2 craft:*:data-[slot=avatar]:ring-background",
         className
       )}
       {...props}
@@ -89,7 +91,7 @@ function AvatarGroupCount({
     <div
       data-slot="avatar-group-count"
       className={cn(
-        "relative flex size-8 shrink-0 items-center justify-center rounded-full bg-muted text-sm text-muted-foreground ring-2 ring-background group-has-data-[size=lg]/avatar-group:size-10 group-has-data-[size=sm]/avatar-group:size-6 [&>svg]:size-4 group-has-data-[size=lg]/avatar-group:[&>svg]:size-5 group-has-data-[size=sm]/avatar-group:[&>svg]:size-3",
+        "craft:relative craft:flex craft:size-8 craft:shrink-0 craft:items-center craft:justify-center craft:rounded-full craft:bg-muted craft:text-sm craft:text-muted-foreground craft:ring-2 craft:ring-background craft:group-has-data-[size=lg]/avatar-group:size-10 craft:group-has-data-[size=sm]/avatar-group:size-6 craft:[&>svg]:size-4 craft:group-has-data-[size=lg]/avatar-group:[&>svg]:size-5 craft:group-has-data-[size=sm]/avatar-group:[&>svg]:size-3",
         className
       )}
       {...props}

@@ -14,7 +14,7 @@ function Progress({
     <ProgressPrimitive.Root
       value={value}
       data-slot="progress"
-      className={cn("flex flex-wrap gap-3", className)}
+      className={cn("craft:flex craft:flex-wrap craft:gap-3", className)}
       {...props}
     >
       {children}
@@ -29,7 +29,7 @@ function ProgressTrack({ className, ...props }: ProgressPrimitive.Track.Props) {
   return (
     <ProgressPrimitive.Track
       className={cn(
-        "relative flex h-1 w-full items-center overflow-x-hidden rounded-full bg-muted",
+        "craft:relative craft:flex craft:h-1 craft:w-full craft:items-center craft:overflow-x-hidden craft:rounded-full craft:bg-muted",
         className
       )}
       data-slot="progress-track"
@@ -45,7 +45,7 @@ function ProgressIndicator({
   return (
     <ProgressPrimitive.Indicator
       data-slot="progress-indicator"
-      className={cn("h-full bg-primary transition-all", className)}
+      className={cn("craft:h-full craft:bg-primary craft:transition-all", className)}
       {...props}
     />
   )
@@ -54,7 +54,7 @@ function ProgressIndicator({
 function ProgressLabel({ className, ...props }: ProgressPrimitive.Label.Props) {
   return (
     <ProgressPrimitive.Label
-      className={cn("text-sm font-medium", className)}
+      className={cn("craft:text-sm craft:font-medium", className)}
       data-slot="progress-label"
       {...props}
     />
@@ -65,7 +65,7 @@ function ProgressValue({ className, ...props }: ProgressPrimitive.Value.Props) {
   return (
     <ProgressPrimitive.Value
       className={cn(
-        "ms-auto text-sm text-muted-foreground tabular-nums",
+        "craft:ms-auto craft:text-sm craft:text-muted-foreground craft:tabular-nums",
         className
       )}
       data-slot="progress-value"

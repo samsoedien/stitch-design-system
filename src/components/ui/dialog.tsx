@@ -1,3 +1,5 @@
+"use client"
+
 import * as React from "react"
 import { Dialog as DialogPrimitive } from "@base-ui/react/dialog"
 
@@ -29,7 +31,7 @@ function DialogOverlay({
     <DialogPrimitive.Backdrop
       data-slot="dialog-overlay"
       className={cn(
-        "fixed inset-0 isolate z-50 bg-black/10 duration-100 supports-backdrop-filter:backdrop-blur-xs data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0",
+        "craft:fixed craft:inset-0 craft:isolate craft:z-50 craft:bg-black/10 craft:duration-100 craft:supports-backdrop-filter:backdrop-blur-xs craft:data-open:animate-in craft:data-open:fade-in-0 craft:data-closed:animate-out craft:data-closed:fade-out-0",
         className
       )}
       {...props}
@@ -51,7 +53,7 @@ function DialogContent({
       <DialogPrimitive.Popup
         data-slot="dialog-content"
         className={cn(
-          "fixed top-1/2 start-1/2 z-50 grid w-full max-w-[calc(100%-2rem)] -translate-x-1/2 rtl:translate-x-1/2 -translate-y-1/2 gap-4 rounded-xl bg-popover p-4 text-sm text-popover-foreground ring-1 ring-foreground/10 duration-100 outline-none sm:max-w-sm data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
+          "craft:fixed craft:top-1/2 craft:start-1/2 craft:z-50 craft:grid craft:w-full craft:max-w-[calc(100%-2rem)] craft:-translate-x-1/2 rtl:craft:translate-x-1/2 craft:-translate-y-1/2 craft:gap-4 craft:rounded-xl craft:bg-popover craft:p-4 craft:text-sm craft:text-popover-foreground craft:ring-1 craft:ring-foreground/10 craft:duration-100 craft:outline-none craft:sm:max-w-sm craft:data-open:animate-in craft:data-open:fade-in-0 craft:data-open:zoom-in-95 craft:data-closed:animate-out craft:data-closed:fade-out-0 craft:data-closed:zoom-out-95",
           className
         )}
         {...props}
@@ -63,14 +65,14 @@ function DialogContent({
             render={
               <Button
                 variant="ghost"
-                className="absolute top-2 end-2"
+                className="craft:absolute craft:top-2 craft:end-2"
                 size="icon-sm"
               />
             }
           >
             <XIcon
             />
-            <span className="sr-only">Close</span>
+            <span className="craft:sr-only">Close</span>
           </DialogPrimitive.Close>
         )}
       </DialogPrimitive.Popup>
@@ -82,7 +84,7 @@ function DialogHeader({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="dialog-header"
-      className={cn("flex flex-col gap-2", className)}
+      className={cn("craft:flex craft:flex-col craft:gap-2", className)}
       {...props}
     />
   )
@@ -100,7 +102,7 @@ function DialogFooter({
     <div
       data-slot="dialog-footer"
       className={cn(
-        "-mx-4 -mb-4 flex flex-col-reverse gap-2 rounded-b-xl border-t bg-muted/50 p-4 sm:flex-row sm:justify-end",
+        "craft:-mx-4 craft:-mb-4 craft:flex craft:flex-col-reverse craft:gap-2 craft:rounded-b-xl craft:border-t craft:bg-muted/50 craft:p-4 craft:sm:flex-row craft:sm:justify-end",
         className
       )}
       {...props}
@@ -120,7 +122,7 @@ function DialogTitle({ className, ...props }: DialogPrimitive.Title.Props) {
     <DialogPrimitive.Title
       data-slot="dialog-title"
       className={cn(
-        "font-heading text-base leading-none font-medium",
+        "craft:font-heading craft:text-base craft:leading-none craft:font-medium",
         className
       )}
       {...props}
@@ -136,7 +138,7 @@ function DialogDescription({
     <DialogPrimitive.Description
       data-slot="dialog-description"
       className={cn(
-        "text-sm text-muted-foreground *:[a]:underline *:[a]:underline-offset-3 *:[a]:hover:text-foreground",
+        "craft:text-sm craft:text-muted-foreground craft:*:[a]:underline craft:*:[a]:underline-offset-3 craft:*:[a]:hover:text-foreground",
         className
       )}
       {...props}

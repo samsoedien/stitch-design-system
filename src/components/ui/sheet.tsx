@@ -28,7 +28,7 @@ function SheetOverlay({ className, ...props }: SheetPrimitive.Backdrop.Props) {
     <SheetPrimitive.Backdrop
       data-slot="sheet-overlay"
       className={cn(
-        "fixed inset-0 z-50 bg-black/10 transition-opacity duration-150 data-ending-style:opacity-0 data-starting-style:opacity-0 supports-backdrop-filter:backdrop-blur-xs",
+        "craft:fixed craft:inset-0 craft:z-50 craft:bg-black/10 craft:transition-opacity craft:duration-150 craft:data-ending-style:opacity-0 craft:data-starting-style:opacity-0 craft:supports-backdrop-filter:backdrop-blur-xs",
         className
       )}
       {...props}
@@ -53,7 +53,7 @@ function SheetContent({
         data-slot="sheet-content"
         data-side={side}
         className={cn(
-          "fixed z-50 flex flex-col gap-4 bg-popover bg-clip-padding text-sm text-popover-foreground shadow-lg transition duration-200 ease-in-out data-ending-style:opacity-0 data-starting-style:opacity-0 data-[side=bottom]:inset-x-0 data-[side=bottom]:bottom-0 data-[side=bottom]:h-auto data-[side=bottom]:border-t data-[side=bottom]:data-ending-style:translate-y-[2.5rem] data-[side=bottom]:data-starting-style:translate-y-[2.5rem] data-[side=left]:inset-y-0 data-[side=left]:left-0 data-[side=left]:h-full data-[side=left]:w-3/4 data-[side=left]:border-e data-[side=left]:data-ending-style:translate-x-[-2.5rem] rtl:data-[side=left]:data-ending-style:-translate-x-[-2.5rem] data-[side=left]:data-starting-style:translate-x-[-2.5rem] rtl:data-[side=left]:data-starting-style:-translate-x-[-2.5rem] data-[side=right]:inset-y-0 data-[side=right]:right-0 data-[side=right]:h-full data-[side=right]:w-3/4 data-[side=right]:border-s data-[side=right]:data-ending-style:translate-x-[2.5rem] rtl:data-[side=right]:data-ending-style:-translate-x-[2.5rem] data-[side=right]:data-starting-style:translate-x-[2.5rem] rtl:data-[side=right]:data-starting-style:-translate-x-[2.5rem] data-[side=top]:inset-x-0 data-[side=top]:top-0 data-[side=top]:h-auto data-[side=top]:border-b data-[side=top]:data-ending-style:translate-y-[-2.5rem] data-[side=top]:data-starting-style:translate-y-[-2.5rem] data-[side=left]:sm:max-w-sm data-[side=right]:sm:max-w-sm",
+          "craft:fixed craft:z-50 craft:flex craft:flex-col craft:gap-4 craft:bg-popover craft:bg-clip-padding craft:text-sm craft:text-popover-foreground craft:shadow-lg craft:transition craft:duration-200 craft:ease-in-out craft:data-ending-style:opacity-0 craft:data-starting-style:opacity-0 craft:data-[side=bottom]:inset-x-0 craft:data-[side=bottom]:bottom-0 craft:data-[side=bottom]:h-auto craft:data-[side=bottom]:border-t craft:data-[side=bottom]:data-ending-style:translate-y-[2.5rem] craft:data-[side=bottom]:data-starting-style:translate-y-[2.5rem] craft:data-[side=left]:inset-y-0 craft:data-[side=left]:left-0 craft:data-[side=left]:h-full craft:data-[side=left]:w-3/4 craft:data-[side=left]:border-e craft:data-[side=left]:data-ending-style:translate-x-[-2.5rem] rtl:craft:data-[side=left]:data-ending-style:-translate-x-[-2.5rem] craft:data-[side=left]:data-starting-style:translate-x-[-2.5rem] rtl:craft:data-[side=left]:data-starting-style:-translate-x-[-2.5rem] craft:data-[side=right]:inset-y-0 craft:data-[side=right]:right-0 craft:data-[side=right]:h-full craft:data-[side=right]:w-3/4 craft:data-[side=right]:border-s craft:data-[side=right]:data-ending-style:translate-x-[2.5rem] rtl:craft:data-[side=right]:data-ending-style:-translate-x-[2.5rem] craft:data-[side=right]:data-starting-style:translate-x-[2.5rem] rtl:craft:data-[side=right]:data-starting-style:-translate-x-[2.5rem] craft:data-[side=top]:inset-x-0 craft:data-[side=top]:top-0 craft:data-[side=top]:h-auto craft:data-[side=top]:border-b craft:data-[side=top]:data-ending-style:translate-y-[-2.5rem] craft:data-[side=top]:data-starting-style:translate-y-[-2.5rem] craft:data-[side=left]:sm:max-w-sm craft:data-[side=right]:sm:max-w-sm",
           className
         )}
         {...props}
@@ -65,14 +65,14 @@ function SheetContent({
             render={
               <Button
                 variant="ghost"
-                className="absolute top-3 end-3"
+                className="craft:absolute craft:top-3 craft:end-3"
                 size="icon-sm"
               />
             }
           >
             <XIcon
             />
-            <span className="sr-only">Close</span>
+            <span className="craft:sr-only">Close</span>
           </SheetPrimitive.Close>
         )}
       </SheetPrimitive.Popup>
@@ -84,7 +84,7 @@ function SheetHeader({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="sheet-header"
-      className={cn("flex flex-col gap-0.5 p-4", className)}
+      className={cn("craft:flex craft:flex-col craft:gap-0.5 craft:p-4", className)}
       {...props}
     />
   )
@@ -94,7 +94,7 @@ function SheetFooter({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="sheet-footer"
-      className={cn("mt-auto flex flex-col gap-2 p-4", className)}
+      className={cn("craft:mt-auto craft:flex craft:flex-col craft:gap-2 craft:p-4", className)}
       {...props}
     />
   )
@@ -105,7 +105,7 @@ function SheetTitle({ className, ...props }: SheetPrimitive.Title.Props) {
     <SheetPrimitive.Title
       data-slot="sheet-title"
       className={cn(
-        "font-heading text-base font-medium text-foreground",
+        "craft:font-heading craft:text-base craft:font-medium craft:text-foreground",
         className
       )}
       {...props}
@@ -120,7 +120,7 @@ function SheetDescription({
   return (
     <SheetPrimitive.Description
       data-slot="sheet-description"
-      className={cn("text-sm text-muted-foreground", className)}
+      className={cn("craft:text-sm craft:text-muted-foreground", className)}
       {...props}
     />
   )

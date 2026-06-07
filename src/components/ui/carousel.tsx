@@ -120,7 +120,7 @@ function Carousel({
     >
       <div
         onKeyDownCapture={handleKeyDown}
-        className={cn("relative", className)}
+        className={cn("craft:relative", className)}
         role="region"
         aria-roledescription="carousel"
         data-slot="carousel"
@@ -138,13 +138,13 @@ function CarouselContent({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       ref={carouselRef}
-      className="overflow-hidden"
+      className="craft:overflow-hidden"
       data-slot="carousel-content"
     >
       <div
         className={cn(
-          "flex",
-          orientation === "horizontal" ? "-ms-4" : "-mt-4 flex-col",
+          "craft:flex",
+          orientation === "horizontal" ? "craft:-ms-4" : "craft:-mt-4 craft:flex-col",
           className
         )}
         {...props}
@@ -162,8 +162,8 @@ function CarouselItem({ className, ...props }: React.ComponentProps<"div">) {
       aria-roledescription="slide"
       data-slot="carousel-item"
       className={cn(
-        "min-w-0 shrink-0 grow-0 basis-full",
-        orientation === "horizontal" ? "ps-4" : "pt-4",
+        "craft:min-w-0 craft:shrink-0 craft:grow-0 craft:basis-full",
+        orientation === "horizontal" ? "craft:ps-4" : "craft:pt-4",
         className
       )}
       {...props}
@@ -185,18 +185,18 @@ function CarouselPrevious({
       variant={variant}
       size={size}
       className={cn(
-        "absolute touch-manipulation rounded-full",
+        "craft:absolute craft:touch-manipulation craft:rounded-full",
         orientation === "horizontal"
-          ? "top-1/2 -start-12 -translate-y-1/2"
-          : "-top-12 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 rotate-90",
+          ? "craft:top-1/2 craft:-start-12 craft:-translate-y-1/2"
+          : "craft:-top-12 craft:start-1/2 craft:-translate-x-1/2 rtl:craft:translate-x-1/2 craft:rotate-90",
         className
       )}
       disabled={!canScrollPrev}
       onClick={scrollPrev}
       {...props}
     >
-      <ChevronLeftIcon className="rtl:rotate-180" />
-      <span className="sr-only">Previous slide</span>
+      <ChevronLeftIcon />
+      <span className="craft:sr-only">Previous slide</span>
     </Button>
   )
 }
@@ -215,18 +215,18 @@ function CarouselNext({
       variant={variant}
       size={size}
       className={cn(
-        "absolute touch-manipulation rounded-full",
+        "craft:absolute craft:touch-manipulation craft:rounded-full",
         orientation === "horizontal"
-          ? "top-1/2 -end-12 -translate-y-1/2"
-          : "-bottom-12 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 rotate-90",
+          ? "craft:top-1/2 craft:-end-12 craft:-translate-y-1/2"
+          : "craft:-bottom-12 craft:start-1/2 craft:-translate-x-1/2 rtl:craft:translate-x-1/2 craft:rotate-90",
         className
       )}
       disabled={!canScrollNext}
       onClick={scrollNext}
       {...props}
     >
-      <ChevronRightIcon className="rtl:rotate-180" />
-      <span className="sr-only">Next slide</span>
+      <ChevronRightIcon />
+      <span className="craft:sr-only">Next slide</span>
     </Button>
   )
 }

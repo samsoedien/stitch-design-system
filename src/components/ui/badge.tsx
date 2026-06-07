@@ -5,20 +5,20 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const badgeVariants = cva(
-  "group/badge inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-4xl border border-transparent px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 has-data-[icon=inline-end]:pe-1.5 has-data-[icon=inline-start]:ps-1.5 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&>svg]:pointer-events-none [&>svg]:size-3!",
+  "craft:group/badge craft:inline-flex craft:h-5 craft:w-fit craft:shrink-0 craft:items-center craft:justify-center craft:gap-1 craft:overflow-hidden craft:rounded-4xl craft:border craft:border-transparent craft:px-2 craft:py-0.5 craft:text-xs craft:font-medium craft:whitespace-nowrap craft:transition-all craft:focus-visible:border-ring craft:focus-visible:ring-[3px] craft:focus-visible:ring-ring/50 craft:has-data-[icon=inline-end]:pe-1.5 craft:has-data-[icon=inline-start]:ps-1.5 craft:aria-invalid:border-destructive craft:aria-invalid:ring-destructive/20 craft:dark:aria-invalid:ring-destructive/40 craft:[&>svg]:pointer-events-none craft:[&>svg]:size-3!",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground [a]:hover:bg-primary/80",
+        default: "craft:bg-primary craft:text-primary-foreground craft:[a]:hover:bg-primary/80",
         secondary:
-          "bg-secondary text-secondary-foreground [a]:hover:bg-secondary/80",
+          "craft:bg-secondary craft:text-secondary-foreground craft:[a]:hover:bg-secondary/80",
         destructive:
-          "bg-destructive/10 text-destructive focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:focus-visible:ring-destructive/40 [a]:hover:bg-destructive/20",
+          "craft:bg-destructive/10 craft:text-destructive craft:focus-visible:ring-destructive/20 craft:dark:bg-destructive/20 craft:dark:focus-visible:ring-destructive/40 craft:[a]:hover:bg-destructive/20",
         outline:
-          "border-border text-foreground [a]:hover:bg-muted [a]:hover:text-muted-foreground",
+          "craft:border-border craft:text-foreground craft:[a]:hover:bg-muted craft:[a]:hover:text-muted-foreground",
         ghost:
-          "hover:bg-muted hover:text-muted-foreground dark:hover:bg-muted/50",
-        link: "text-primary underline-offset-4 hover:underline",
+          "craft:hover:bg-muted craft:hover:text-muted-foreground craft:dark:hover:bg-muted/50",
+        link: "craft:text-primary craft:underline-offset-4 craft:hover:underline",
       },
     },
     defaultVariants: {

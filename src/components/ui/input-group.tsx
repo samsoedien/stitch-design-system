@@ -14,7 +14,7 @@ function InputGroup({ className, ...props }: React.ComponentProps<"div">) {
       data-slot="input-group"
       role="group"
       className={cn(
-        "group/input-group relative flex h-8 w-full min-w-0 items-center rounded-lg border border-input transition-colors outline-none in-data-[slot=combobox-content]:focus-within:border-inherit in-data-[slot=combobox-content]:focus-within:ring-0 has-disabled:bg-input/50 has-disabled:opacity-50 has-[[data-slot=input-group-control]:focus-visible]:border-ring has-[[data-slot=input-group-control]:focus-visible]:ring-3 has-[[data-slot=input-group-control]:focus-visible]:ring-ring/50 has-[[data-slot][aria-invalid=true]]:border-destructive has-[[data-slot][aria-invalid=true]]:ring-3 has-[[data-slot][aria-invalid=true]]:ring-destructive/20 has-[>[data-align=block-end]]:h-auto has-[>[data-align=block-end]]:flex-col has-[>[data-align=block-start]]:h-auto has-[>[data-align=block-start]]:flex-col has-[>textarea]:h-auto dark:bg-input/30 dark:has-disabled:bg-input/80 dark:has-[[data-slot][aria-invalid=true]]:ring-destructive/40 has-[>[data-align=block-end]]:[&>input]:pt-3 has-[>[data-align=block-start]]:[&>input]:pb-3 has-[>[data-align=inline-end]]:[&>input]:pe-1.5 has-[>[data-align=inline-start]]:[&>input]:ps-1.5",
+        "craft:group/input-group craft:relative craft:flex craft:h-8 craft:w-full craft:min-w-0 craft:items-center craft:rounded-lg craft:border craft:border-input craft:transition-colors craft:outline-none craft:in-data-[slot=combobox-content]:focus-within:border-inherit craft:in-data-[slot=combobox-content]:focus-within:ring-0 craft:has-disabled:bg-input/50 craft:has-disabled:opacity-50 craft:has-[[data-slot=input-group-control]:focus-visible]:border-ring craft:has-[[data-slot=input-group-control]:focus-visible]:ring-3 craft:has-[[data-slot=input-group-control]:focus-visible]:ring-ring/50 craft:has-[[data-slot][aria-invalid=true]]:border-destructive craft:has-[[data-slot][aria-invalid=true]]:ring-3 craft:has-[[data-slot][aria-invalid=true]]:ring-destructive/20 craft:has-[>[data-align=block-end]]:h-auto craft:has-[>[data-align=block-end]]:flex-col craft:has-[>[data-align=block-start]]:h-auto craft:has-[>[data-align=block-start]]:flex-col craft:has-[>textarea]:h-auto craft:dark:bg-input/30 craft:dark:has-disabled:bg-input/80 craft:dark:has-[[data-slot][aria-invalid=true]]:ring-destructive/40 craft:has-[>[data-align=block-end]]:[&>input]:pt-3 craft:has-[>[data-align=block-start]]:[&>input]:pb-3 craft:has-[>[data-align=inline-end]]:[&>input]:pe-1.5 craft:has-[>[data-align=inline-start]]:[&>input]:ps-1.5",
         className
       )}
       {...props}
@@ -23,18 +23,18 @@ function InputGroup({ className, ...props }: React.ComponentProps<"div">) {
 }
 
 const inputGroupAddonVariants = cva(
-  "flex h-auto cursor-text items-center justify-center gap-2 py-1.5 text-sm font-medium text-muted-foreground select-none group-data-[disabled=true]/input-group:opacity-50 [&>kbd]:rounded-[calc(var(--radius)-5px)] [&>svg:not([class*='size-'])]:size-4",
+  "craft:flex craft:h-auto craft:cursor-text craft:items-center craft:justify-center craft:gap-2 craft:py-1.5 craft:text-sm craft:font-medium craft:text-muted-foreground craft:select-none craft:group-data-[disabled=true]/input-group:opacity-50 craft:[&>kbd]:rounded-[calc(var(--radius)-5px)] craft:[&>svg:not([class*=size-])]:size-4",
   {
     variants: {
       align: {
         "inline-start":
-          "order-first ps-2 has-[>button]:ms-[-0.3rem] has-[>kbd]:ms-[-0.15rem]",
+          "craft:order-first craft:ps-2 craft:has-[>button]:ms-[-0.3rem] craft:has-[>kbd]:ms-[-0.15rem]",
         "inline-end":
-          "order-last pe-2 has-[>button]:me-[-0.3rem] has-[>kbd]:me-[-0.15rem]",
+          "craft:order-last craft:pe-2 craft:has-[>button]:me-[-0.3rem] craft:has-[>kbd]:me-[-0.15rem]",
         "block-start":
-          "order-first w-full justify-start px-2.5 pt-2 group-has-[>input]/input-group:pt-2 [.border-b]:pb-2",
+          "craft:order-first craft:w-full craft:justify-start craft:px-2.5 craft:pt-2 craft:group-has-[>input]/input-group:pt-2 craft:[.border-b]:pb-2",
         "block-end":
-          "order-last w-full justify-start px-2.5 pb-2 group-has-[>input]/input-group:pb-2 [.border-t]:pt-2",
+          "craft:order-last craft:w-full craft:justify-start craft:px-2.5 craft:pb-2 craft:group-has-[>input]/input-group:pb-2 craft:[.border-t]:pt-2",
       },
     },
     defaultVariants: {
@@ -66,15 +66,15 @@ function InputGroupAddon({
 }
 
 const inputGroupButtonVariants = cva(
-  "flex items-center gap-2 text-sm shadow-none",
+  "craft:flex craft:items-center craft:gap-2 craft:text-sm craft:shadow-none",
   {
     variants: {
       size: {
-        xs: "h-6 gap-1 rounded-[calc(var(--radius)-3px)] px-1.5 [&>svg:not([class*='size-'])]:size-3.5",
-        sm: "",
+        xs: "craft:h-6 craft:gap-1 craft:rounded-[calc(var(--radius)-3px)] craft:px-1.5 craft:[&>svg:not([class*=size-])]:size-3.5",
+        sm: "craft:",
         "icon-xs":
-          "size-6 rounded-[calc(var(--radius)-3px)] p-0 has-[>svg]:p-0",
-        "icon-sm": "size-8 p-0 has-[>svg]:p-0",
+          "craft:size-6 craft:rounded-[calc(var(--radius)-3px)] craft:p-0 craft:has-[>svg]:p-0",
+        "icon-sm": "craft:size-8 craft:p-0 craft:has-[>svg]:p-0",
       },
     },
     defaultVariants: {
@@ -108,7 +108,7 @@ function InputGroupText({ className, ...props }: React.ComponentProps<"span">) {
   return (
     <span
       className={cn(
-        "flex items-center gap-2 text-sm text-muted-foreground [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4",
+        "craft:flex craft:items-center craft:gap-2 craft:text-sm craft:text-muted-foreground craft:[&_svg]:pointer-events-none craft:[&_svg:not([class*=size-])]:size-4",
         className
       )}
       {...props}
@@ -124,7 +124,7 @@ function InputGroupInput({
     <Input
       data-slot="input-group-control"
       className={cn(
-        "flex-1 rounded-none border-0 bg-transparent shadow-none ring-0 focus-visible:ring-0 disabled:bg-transparent aria-invalid:ring-0 dark:bg-transparent dark:disabled:bg-transparent",
+        "craft:flex-1 craft:rounded-none craft:border-0 craft:bg-transparent craft:shadow-none craft:ring-0 craft:focus-visible:ring-0 craft:disabled:bg-transparent craft:aria-invalid:ring-0 craft:dark:bg-transparent craft:dark:disabled:bg-transparent",
         className
       )}
       {...props}
@@ -140,7 +140,7 @@ function InputGroupTextarea({
     <Textarea
       data-slot="input-group-control"
       className={cn(
-        "flex-1 resize-none rounded-none border-0 bg-transparent py-2 shadow-none ring-0 focus-visible:ring-0 disabled:bg-transparent aria-invalid:ring-0 dark:bg-transparent dark:disabled:bg-transparent",
+        "craft:flex-1 craft:resize-none craft:rounded-none craft:border-0 craft:bg-transparent craft:py-2 craft:shadow-none craft:ring-0 craft:focus-visible:ring-0 craft:disabled:bg-transparent craft:aria-invalid:ring-0 craft:dark:bg-transparent craft:dark:disabled:bg-transparent",
         className
       )}
       {...props}

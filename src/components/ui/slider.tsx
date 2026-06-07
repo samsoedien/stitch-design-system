@@ -18,7 +18,7 @@ function Slider({
 
   return (
     <SliderPrimitive.Root
-      className={cn("data-horizontal:w-full data-vertical:h-full", className)}
+      className={cn("craft:data-horizontal:w-full craft:data-vertical:h-full", className)}
       data-slot="slider"
       defaultValue={defaultValue}
       value={value}
@@ -27,21 +27,21 @@ function Slider({
       thumbAlignment="edge"
       {...props}
     >
-      <SliderPrimitive.Control className="relative flex w-full touch-none items-center select-none data-disabled:opacity-50 data-vertical:h-full data-vertical:min-h-40 data-vertical:w-auto data-vertical:flex-col">
+      <SliderPrimitive.Control className="craft:relative craft:flex craft:w-full craft:touch-none craft:items-center craft:select-none craft:data-disabled:opacity-50 craft:data-vertical:h-full craft:data-vertical:min-h-40 craft:data-vertical:w-auto craft:data-vertical:flex-col">
         <SliderPrimitive.Track
           data-slot="slider-track"
-          className="relative grow overflow-hidden rounded-full bg-muted select-none data-horizontal:h-1 data-horizontal:w-full data-vertical:h-full data-vertical:w-1"
+          className="craft:relative craft:grow craft:overflow-hidden craft:rounded-full craft:bg-muted craft:select-none craft:data-horizontal:h-1 craft:data-horizontal:w-full craft:data-vertical:h-full craft:data-vertical:w-1"
         >
           <SliderPrimitive.Indicator
             data-slot="slider-range"
-            className="bg-primary select-none data-horizontal:h-full data-vertical:w-full"
+            className="craft:bg-primary craft:select-none craft:data-horizontal:h-full craft:data-vertical:w-full"
           />
         </SliderPrimitive.Track>
         {Array.from({ length: _values.length }, (_, index) => (
           <SliderPrimitive.Thumb
             data-slot="slider-thumb"
             key={index}
-            className="relative block size-3 shrink-0 rounded-full border border-ring bg-white ring-ring/50 transition-[color,box-shadow] select-none after:absolute after:-inset-2 hover:ring-3 focus-visible:ring-3 focus-visible:outline-hidden active:ring-3 disabled:pointer-events-none disabled:opacity-50"
+            className="craft:relative craft:block craft:size-3 craft:shrink-0 craft:rounded-full craft:border craft:border-ring craft:bg-white craft:ring-ring/50 craft:transition-[color,box-shadow] craft:select-none craft:after:absolute craft:after:-inset-2 craft:hover:ring-3 craft:focus-visible:ring-3 craft:focus-visible:outline-hidden craft:active:ring-3 craft:disabled:pointer-events-none craft:disabled:opacity-50"
           />
         ))}
       </SliderPrimitive.Control>

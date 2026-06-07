@@ -1,4 +1,5 @@
-import * as React from "react"
+"use client"
+
 import { ScrollArea as ScrollAreaPrimitive } from "@base-ui/react/scroll-area"
 
 import { cn } from "@/lib/utils"
@@ -11,12 +12,12 @@ function ScrollArea({
   return (
     <ScrollAreaPrimitive.Root
       data-slot="scroll-area"
-      className={cn("relative", className)}
+      className={cn("craft:relative", className)}
       {...props}
     >
       <ScrollAreaPrimitive.Viewport
         data-slot="scroll-area-viewport"
-        className="size-full rounded-[inherit] transition-[color,box-shadow] outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-1"
+        className="craft:size-full craft:rounded-[inherit] craft:transition-[color,box-shadow] craft:outline-none craft:focus-visible:ring-[3px] craft:focus-visible:ring-ring/50 craft:focus-visible:outline-1"
       >
         {children}
       </ScrollAreaPrimitive.Viewport>
@@ -37,14 +38,14 @@ function ScrollBar({
       data-orientation={orientation}
       orientation={orientation}
       className={cn(
-        "flex touch-none p-px transition-colors select-none data-horizontal:h-2.5 data-horizontal:flex-col data-horizontal:border-t data-horizontal:border-t-transparent data-vertical:h-full data-vertical:w-2.5 data-vertical:border-s data-vertical:border-s-transparent",
+        "craft:flex craft:touch-none craft:p-px craft:transition-colors craft:select-none craft:data-horizontal:h-2.5 craft:data-horizontal:flex-col craft:data-horizontal:border-t craft:data-horizontal:border-t-transparent craft:data-vertical:h-full craft:data-vertical:w-2.5 craft:data-vertical:border-s craft:data-vertical:border-s-transparent",
         className
       )}
       {...props}
     >
       <ScrollAreaPrimitive.Thumb
         data-slot="scroll-area-thumb"
-        className="relative flex-1 rounded-full bg-border"
+        className="craft:relative craft:flex-1 craft:rounded-full craft:bg-border"
       />
     </ScrollAreaPrimitive.Scrollbar>
   )

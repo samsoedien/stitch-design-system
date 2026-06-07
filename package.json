@@ -2,9 +2,26 @@
   "name": "@project-craft/core",
   "version": "0.0.0",
   "type": "module",
+  "files": [
+    "lib"
+  ],
+  "module": "./lib/esm/index.js",
+  "main": "./lib/cjs/index.js",
+  "types": "./lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "import": "./lib/esm/index.js",
+      "require": "./lib/cjs/index.js"
+    },
+    "./lib/globals.css": {
+      "default": "./lib/globals.css"
+    }
+  },
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "compile": "vite",
+    "build": "tsc -b && vite build && yarn build:styles",
+    "build:styles": "yarn dlx @tailwindcss/cli -i ./src/styles/globals.css  -o ./lib/globals.css --postcss --minify",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "preview": "vite preview"
@@ -48,7 +65,8 @@
     "prettier-plugin-tailwindcss": "^0.8.0",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8",
-    "vite": "^8"
+    "vite": "^8",
+    "vite-plugin-dts": "^5.0.2"
   },
   "repository": {
     "type": "git",

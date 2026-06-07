@@ -21,7 +21,7 @@ function BreadcrumbList({ className, ...props }: React.ComponentProps<"ol">) {
     <ol
       data-slot="breadcrumb-list"
       className={cn(
-        "flex flex-wrap items-center gap-1.5 text-sm wrap-break-word text-muted-foreground",
+        "craft:flex craft:flex-wrap craft:items-center craft:gap-1.5 craft:text-sm craft:wrap-break-word craft:text-muted-foreground",
         className
       )}
       {...props}
@@ -33,7 +33,7 @@ function BreadcrumbItem({ className, ...props }: React.ComponentProps<"li">) {
   return (
     <li
       data-slot="breadcrumb-item"
-      className={cn("inline-flex items-center gap-1", className)}
+      className={cn("craft:inline-flex craft:items-center craft:gap-1", className)}
       {...props}
     />
   )
@@ -66,7 +66,7 @@ function BreadcrumbPage({ className, ...props }: React.ComponentProps<"span">) {
       role="link"
       aria-disabled="true"
       aria-current="page"
-      className={cn("font-normal text-foreground", className)}
+      className={cn("craft:font-normal craft:text-foreground", className)}
       {...props}
     />
   )
@@ -82,11 +82,11 @@ function BreadcrumbSeparator({
       data-slot="breadcrumb-separator"
       role="presentation"
       aria-hidden="true"
-      className={cn("[&>svg]:size-3.5", className)}
+      className={cn("craft:[&>svg]:size-3.5", className)}
       {...props}
     >
       {children ?? (
-        <ChevronRightIcon className="rtl:rotate-180" />
+        <ChevronRightIcon />
       )}
     </li>
   )
@@ -102,14 +102,14 @@ function BreadcrumbEllipsis({
       role="presentation"
       aria-hidden="true"
       className={cn(
-        "flex size-5 items-center justify-center [&>svg]:size-4",
+        "craft:flex craft:size-5 craft:items-center craft:justify-center craft:[&>svg]:size-4",
         className
       )}
       {...props}
     >
       <MoreHorizontalIcon
       />
-      <span className="sr-only">More</span>
+      <span className="craft:sr-only">More</span>
     </span>
   )
 }
