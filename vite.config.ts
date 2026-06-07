@@ -6,6 +6,11 @@ import dts from 'vite-plugin-dts'
 
 import pkg from './package.json'
 
+const externalDeps = Object.keys(pkg.dependencies)
+
+const isExternal = (id: string) =>
+  externalDeps.some((dep) => id === dep || id.startsWith(`${dep}/`))
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss(), dts({ outDirs: 'lib/types' })],
@@ -26,7 +31,7 @@ export default defineConfig({
     sourcemap: true,
     cssCodeSplit: true,
     rollupOptions: {
-      external: ['react', ...Object.keys(pkg.dependencies)],
+      external: isExternal,
       output: [
         {
           format: 'es',
