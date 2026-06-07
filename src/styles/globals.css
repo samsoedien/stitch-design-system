@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import 'tailwindcss' prefix(craft);
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 @import '@fontsource-variable/figtree';
@@ -120,16 +120,16 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply craft:border-border craft:outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply craft:bg-background craft:text-foreground;
   }
   button:not(:disabled),
   [role='button']:not(:disabled) {
     cursor: pointer;
   }
   html {
-    @apply font-sans;
+    @apply craft:font-sans;
   }
 }
