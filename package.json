@@ -24,7 +24,6 @@
     "build:styles": "yarn dlx @tailwindcss/cli -i ./src/styles/globals.css  -o ./lib/globals.css --postcss --minify",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "preview": "vite preview",
     "clean": "yarn run -T rimraf lib"
   },
   "dependencies": {
