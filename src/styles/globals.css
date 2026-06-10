@@ -1,10 +1,10 @@
 @import 'tailwindcss' prefix(craft);
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
-@import '@fontsource-variable/figtree';
-@import '@fontsource-variable/raleway';
+/* @import '@fontsource-variable/figtree';
+@import '@fontsource-variable/raleway'; */
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&: is(.dark *));
 
 :root {
   --background: oklch(1 0 0);

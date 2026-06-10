@@ -13,7 +13,15 @@ const isExternal = (id: string) =>
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss(), dts({ outDirs: 'lib/types' })],
+  plugins: [
+    react(),
+    tailwindcss(),
+    dts({
+      tsconfigPath: './tsconfig.app.json',
+      compilerOptions: { rootDir: 'src' },
+      outDirs: 'lib/types',
+    }),
+  ],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
