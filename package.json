@@ -68,8 +68,5 @@
     "vite": "^8.0.12",
     "vite-plugin-dts": "^5.0.2"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/samsoedien/stitch-design-system.git"
-  }
+  "repository": "https://github.com/samsoedien/project-craft/tree/main/packages/core"
 }
